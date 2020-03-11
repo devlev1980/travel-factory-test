@@ -1,0 +1,12 @@
+.header{
+  text-align: center;
+}
+.actions{
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+
+  & button.add-btn{
+    margin-right: 10px;
+  }
+}

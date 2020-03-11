@@ -1,0 +1,118 @@
+.container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10px 20px;
+
+  mat-card {
+    max-width: 500px;
+    width: 100%;
+    margin: 0 2rem 2rem 0;
+
+
+
+    @media (max-width: 1200px) {
+      max-width: 100%;
+      width: 100%;
+      margin: 0 0 2rem 0;
+    }
+    @media (max-width: 425px) {
+      max-width: 100%;
+      width: 100%;
+      margin: 0 0 2rem 0;
+    }
+
+    .content {
+      display: flex;
+
+      .content-img {
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        flex-direction: column;
+        -webkit-box-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        align-items: center;
+        text-align: center;
+        margin-right: 2rem;
+        white-space: nowrap;
+
+        img {
+          border-radius: 50%;
+          margin-bottom: 15px;
+        }
+      }
+
+      .content-info {
+        line-height: 1.5;
+
+        h4, h3 {
+          margin: 0;
+        }
+
+        h3 {
+          margin-bottom: 10px;
+        }
+        .address{
+          display: flex;
+          align-items: flex-start;
+          margin-bottom: 15px;
+
+          .contact-address{
+            margin-left: 5px;
+            margin-right: 5px;
+          }
+        }
+        .company-street,.company-city {
+          display: block;
+        }
+      }
+    }
+
+    .actions {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      button{
+        background: transparent;
+        cursor: pointer;
+        border: 0;
+      }
+    }
+  }
+  .add-contact-wrapper{
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    max-width: 539px;
+    width: 100%;
+
+    .add-contact{
+      width:50px;
+      /* height: 50px; */
+      border: 1px solid green;
+      height: 50px;
+      border-radius: 50%;
+      position: relative;
+      background-color: white;
+
+      button.btn-add{
+        font-size: 36px;
+        color: green;
+        position: absolute;
+        top: 0;
+        left: 13px;
+        padding: 0;
+        width: 0;
+        height: 0;
+        border: 0;
+        outline: none;
+        background: transparent;
+        cursor: pointer;
+      }
+    }
+  }
+
+}

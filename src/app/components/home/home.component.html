@@ -1,0 +1,40 @@
+<div class="container" >
+  <mat-card *ngFor="let contact of contacts;let index=index">
+    <div class="content">
+      <div class="content-img">
+        <img src="assets/img/{{contact.imgSrc}}" alt="{{contact.imgAlt}}">
+        <span>{{contact.position}}</span>
+      </div>
+      <div class="content-info">
+        <h3>{{contact.name}}</h3>
+
+        <div class="address">
+          <mat-icon aria-hidden="false" aria-label="Example home icon">location_on</mat-icon>
+          <span class="contact-address">{{contact.city}}</span>
+          <span>{{contact.state}}</span>
+        </div>
+        <h4>{{contact.company_name}}</h4>
+        <span class="company-street">{{contact.company_address.street}}</span>
+        <span class="company-city">{{contact.company_address.city}}</span>
+        <span>P:  {{contact.phone}}</span>
+
+      </div>
+
+    </div>
+    <div class="actions">
+      <button class="edit-btn">
+        <mat-icon aria-hidden="false" aria-label="Example home icon" (click)="onEditContact(contact,index)">edit</mat-icon>
+
+      </button>
+      <button class="delete-btn">
+        <mat-icon aria-hidden="false" aria-label="Example home icon" (click)="onDeleteContact(index)">delete</mat-icon>
+      </button>
+    </div>
+  </mat-card>
+  <div class="add-contact-wrapper">
+    <div class="add-contact">
+      <button class="btn-add" (click)="onAddContact()">+</button>
+    </div>
+  </div>
+
+</div>

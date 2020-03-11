@@ -1,0 +1,48 @@
+<div class="container">
+
+  <div class="content">
+    <form [formGroup]="addForm" class="add-contact-form">
+      <div class="contact-image">
+        <img src="../../../assets/img/{{getImgSrc()}}" alt="{{getImgAlt()}}">
+      </div>
+
+      <mat-form-field>
+        <input type="text" matInput formControlName="name" placeholder="Name">
+      </mat-form-field>
+      <mat-error *ngIf="addForm.get('name').touched && !addForm.get('name').valid" class="name-error">This field is required</mat-error>
+      <mat-form-field>
+        <input type="text" matInput formControlName="position" placeholder="Position">
+      </mat-form-field>
+      <mat-form-field>
+        <input type="text" matInput formControlName="city" placeholder="City">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input type="text" matInput formControlName="state" placeholder="State">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input type="text" matInput formControlName="company_name" placeholder="Company name">
+      </mat-form-field>
+      <div formGroupName="company_address">
+        <mat-form-field>
+          <input type="text" matInput formControlName="street" placeholder="Street">
+        </mat-form-field>
+        <mat-form-field>
+          <input type="text" matInput formControlName="city" placeholder="city">
+        </mat-form-field>
+      </div>
+
+      <mat-form-field>
+        <input type="text" matInput formControlName="phone" placeholder="phone" >
+      </mat-form-field>
+      <mat-error *ngIf="addForm.get('phone').touched && !addForm.get('phone').hasError('pattern')" class="name-error">This field must be in format (123)456-7890</mat-error>
+
+
+      <div class="actions">
+        <button mat-raised-button color="primary" [mat-dialog-close]="addForm.value" class="add-btn" [disabled]="addForm.invalid">Add</button>
+        <button mat-raised-button color="warn" [mat-dialog-close]="false" class="cancel-btn">Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>
